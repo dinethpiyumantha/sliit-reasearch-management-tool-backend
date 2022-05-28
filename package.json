@@ -1,0 +1,23 @@
+{
+  "name": "research-portal-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "type": "module",
+  "author": "2022S2_JUN_13",
+  "license": "ISC",
+  "devDependencies": {
+    "koa": "^2.13.4",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "@koa/router": "^10.1.1",
+    "dotenv": "^16.0.1",
+    "koa-bodyparser": "^4.3.0",
+    "mongoose": "^6.3.4"
+  }
+}
