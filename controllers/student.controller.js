@@ -30,10 +30,10 @@ const getAll = (ctx) => {
   });
 };
 
-const getOne = (ctx) => {};
+const getOneById = (ctx) => {};
 
 const update = (ctx) => {};
 
 const remove = (ctx) => {};
 
-export { register, getAll, getOne, update, remove };
+export { register, getAll, getOneById, update, remove };

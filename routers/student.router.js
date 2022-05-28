@@ -2,7 +2,7 @@ import KoaRouter from '@koa/router';
 import {
     register,
     getAll,
-    getOne,
+    getOneById,
     update,
     remove
 } from '../controllers/student.controller.js';
@@ -13,7 +13,7 @@ const studentRouter = new KoaRouter({
 
 studentRouter.post('/', register);
 studentRouter.get('/', getAll);
-studentRouter.get('/:id', getOne);
+studentRouter.get('/:id', getOneById);
 studentRouter.put('/:id', update);
 studentRouter.delete('/:id', remove);
 
