@@ -1,10 +1,12 @@
 import KoaRouter from '@koa/router';
 import {
     register,
+    login,
     getAll,
     getOneById,
     update,
-    remove
+    remove,
+    authenticateToken
 } from '../controllers/student.controller.js';
 
 // Create a new router instance
@@ -18,6 +20,12 @@ const studentRouter = new KoaRouter({
  * @description Register a new student
  */
 studentRouter.post('/', register);
+
+/**
+ * @route POST /api/students
+ * @description Register a new student
+ */
+ studentRouter.post('/login', login);
 
 /**
  * @route GET /api/students

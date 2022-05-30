@@ -1,0 +1,28 @@
+### Register Student
+POST http://localhost:3000/api/students
+Content-Type: application/json
+
+{
+  "name": "Dineth Piyumantha",
+  "email": "dineth@email.com",
+  "password": "dineth",
+  "phone": "1234",
+  "studentId": "12345678",
+  "type": "student"
+}
+
+### Login Student
+
+POST http://localhost:3000/api/students/login
+Content-Type: application/json
+
+{
+  "email": "dinethpiyumantha@outlook.com",
+  "password": "dineth"
+}
+
+### Get All Students
+
+GET http://localhost:3000/api/students
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpbmV0aEBlbWFpbC5jb20iLCJfaWQiOiI2MjkzNjg5NDMxYWZkMGIzMmE5ZmI0ZmIiLCJpYXQiOjE2NTM4Mjc3NTgsImV4cCI6MTY1NDI1OTc1OH0.x153qXPBeer4tp-hHMzppbqtCK-6OI6YsNQMh3RNnRM

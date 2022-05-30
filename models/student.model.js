@@ -10,6 +10,7 @@ const StudentSchema = new Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
         trim: true
     },
     phone: {
@@ -18,7 +19,7 @@ const StudentSchema = new Schema({
         trim: true
     },
     password: {
-        type: String,
+        type: Object,
         required: true,
         trim: true
     },

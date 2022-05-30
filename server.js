@@ -11,6 +11,7 @@ import dotenv from 'dotenv';
 
 // Import routers
 import studentRouter from './routers/student.router.js';
+import groupRouter from './routers/group.router.js';
 
 dotenv.config();
 
@@ -22,9 +23,10 @@ app.use(bodyParser());
 
 // Router middlewares
 app.use(studentRouter.routes()).use(studentRouter.allowedMethods());
+app.use(groupRouter.routes()).use(groupRouter.allowedMethods());
 
 app.use(ctx => {
-  ctx.body = '<h2>404 Not Found</h2>';
+  ctx.throw(404, 'API not found');
 });
 
 // Connect to the database
@@ -38,7 +40,6 @@ mongoose.connection.once('open', () => {
 });
 
 // Run the server
-
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
