@@ -8,6 +8,7 @@ import {
   requestSupervisor,
   requestCoSupervisor,
   submitDocument,
+  getGroupByStudentId
 } from "../controllers/group.controller.js";
 
 const groupRouter = new KoaRouter({
@@ -22,5 +23,6 @@ groupRouter.delete("/:id", remove);
 groupRouter.post("/:id/request-supervisor", requestSupervisor);
 groupRouter.post("/:id/request-co-supervisor", requestCoSupervisor);
 groupRouter.post("/:id/submit-document", submitDocument);
+groupRouter.get("/student/:id", getGroupByStudentId);
 
 export default groupRouter;
