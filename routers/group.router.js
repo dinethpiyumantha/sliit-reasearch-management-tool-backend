@@ -20,8 +20,8 @@ groupRouter.get("/", getAll);
 groupRouter.get("/:id", getOneById);
 groupRouter.put("/:id", update);
 groupRouter.delete("/:id", remove);
-groupRouter.post("/:id/request-supervisor", requestSupervisor);
-groupRouter.post("/:id/request-co-supervisor", requestCoSupervisor);
+groupRouter.put("/request/supervisor/:id", requestSupervisor);
+groupRouter.put("/request/cosupervisor/:id", requestCoSupervisor);
 groupRouter.post("/:id/submit-document", submitDocument);
 groupRouter.get("/student/:id", getGroupByStudentId);
 
