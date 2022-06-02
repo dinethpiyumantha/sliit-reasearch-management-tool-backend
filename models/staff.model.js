@@ -35,3 +35,6 @@ const StaffSchema = new Schema({
     }
 
 });
+
+const Staff = mongoose.model("Staff", StaffSchema);
+export default Staff;
