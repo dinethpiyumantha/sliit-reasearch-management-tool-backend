@@ -1,44 +1,33 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const StaffSchema = new Schema({
-    staffId: {
+const TopicEvaluateSchema = new Schema({
+    groupId: {
         type: String,
         required: true,
         trim: true
     },
-    name: {
+    topic: {
         type: String,
         required: true,
         trim: true
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true
-    },
-    phone: {
+    acceptancestatus: {
         type: String,
         required: true,
         trim: true
     },
-    type: {
+    evaluationstatus: {
         type: String,
         required: true,
         trim: true
     },
-    password: {
-        type: Object,
+    feedback: {
+        type: String,
         required: true,
         trim: true
-    },
-    interests: {
-        type: Array
-        
     }
-
 });
 
-const Staff = mongoose.model("Staff", StaffSchema);
-export default Staff;
+const TopicEvaluate = mongoose.model("TopicEvaluate", TopicEvaluateSchema);
+export default TopicEvaluate;

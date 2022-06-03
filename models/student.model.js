@@ -32,6 +32,10 @@ const StudentSchema = new Schema({
         type: String,
         required: true,
         trim: true
+    },
+    interests: {
+        type: Array,
+        required: true
     }
 });
 

@@ -12,6 +12,7 @@ import dotenv from 'dotenv';
 // Import routers
 import studentRouter from './routers/student.router.js';
 import groupRouter from './routers/group.router.js';
+import staffRouter from './routers/staff.router.js';
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use(bodyParser());
 // Router middlewares
 app.use(studentRouter.routes()).use(studentRouter.allowedMethods());
 app.use(groupRouter.routes()).use(groupRouter.allowedMethods());
+app.use(staffRouter.routes()).use(staffRouter.allowedMethods());
 
 app.use(ctx => {
   ctx.throw(404, 'API not found');
