@@ -1,5 +1,5 @@
 
-import TopicEvaluate from "../models/topic.evaluate.model";
+import TopicEvaluate from "../models/topic.evaluate.model.js";
 
 const evaluateTopic = async (ctx) => {
     try {
@@ -17,4 +17,4 @@ const evaluateTopic = async (ctx) => {
 export {
     
     evaluateTopic
-}
+};
