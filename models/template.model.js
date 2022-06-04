@@ -1,29 +1,13 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const StudentSchema = new Schema({
+const TemplateSchema = new Schema({
     name: {
         type: String,
         required: true,
         trim: true
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true
-    },
-    phone: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    password: {
-        type: Object,
-        required: true,
-        trim: true
-    },
-    studentId: {
+    description: {
         type: String,
         required: true,
         unique: true,
@@ -33,8 +17,13 @@ const StudentSchema = new Schema({
         type: String,
         required: true,
         trim: true
-    }
-});
+    },
+    file: {
+        type: Object,
+        required: true,
+        trim: true
+    },
+}, { timestamps: true });
 
-const Student = mongoose.model("Student", StudentSchema);
-export default Student;
+const Template = mongoose.model("Template", TemplateSchema);
+export default Template;

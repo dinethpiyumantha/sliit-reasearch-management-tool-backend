@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/submissions
+Content-Type: application/json
+
+{
+  "name": "Dineth Piyumantha",
+  "description": "dineth@email.com",
+  "deadline": "dineth",
+  "type": "jpg"
+}

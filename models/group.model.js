@@ -25,6 +25,14 @@ const GroupSchema = new Schema({
     required: true,
     trim: true,
   },
+  supervisor: {
+    type: Object,
+    required: false
+  },
+  coSupervisor: {
+    type: Object,
+    required: false
+  }
 });
 
 const Group = mongoose.model("Group", GroupSchema);

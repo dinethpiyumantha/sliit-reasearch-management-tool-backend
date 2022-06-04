@@ -1,0 +1,13 @@
+POST http://localhost:3000/api/templates
+Content-Type: application/json
+
+{
+  "name": "Dineth Piyumantha",
+  "description": "dineth@email.com",
+  "file": "public\\submissions\\Back.jpg_1654221771906",
+  "type": "jpg"
+}
+
+###
+
+GET http://localhost:3000/api/templates

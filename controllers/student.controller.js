@@ -34,11 +34,11 @@ const register = (ctx) => {
  */
 const login = async (ctx) => {
   try {
-    const student = await Student.findOne({ email: ctx.request.body.email });
+    const student = await Student.findOne({ studentId: ctx.request.body.studentId });
 
     if (!student) {
       ctx.status = 400;
-      ctx.body = "Invalid email or password";
+      ctx.body = "Invalid User Id or password";
     } else {
       const password = decrypt(student.password);
       if (password === ctx.request.body.password) {
@@ -53,6 +53,7 @@ const login = async (ctx) => {
             process.env.SECRET,
             { expiresIn: "5d" }
           ),
+          user: {password, ...student._doc},
         };
       } else {
         ctx.throw(401, "Wrong password");

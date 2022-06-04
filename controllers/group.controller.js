@@ -66,9 +66,49 @@ const remove = async (ctx) => {
   }
 };
 
-const requestSupervisor = async (ctx) => {};
+const getGroupByStudentId = async (ctx) => {
+  try {
+    const group = await Group.findOne({members: ctx.request.params.id});
+    if (!group) {
+      ctx.throw(404, "Group not found");
+    }
+    ctx.status = 200;
+    ctx.body = group;
+  } catch (err) {
+    ctx.throw(500, err);
+    ctx.body = err;
+  }
+};
 
-const requestCoSupervisor = async (ctx) => {};
+const requestSupervisor = async (ctx) => {
+  try {
+    const group = await Group.findByIdAndUpdate(
+      ctx.request.params.id,
+      { supervisor: ctx.request.body }
+    );
+    console.log(group);
+    ctx.status = 200;
+    ctx.body = group;
+  } catch (err) {
+    ctx.throw(500, err);
+    ctx.body = err;
+  }
+};
+
+const requestCoSupervisor = async (ctx) => {
+  try {
+    const group = await Group.findByIdAndUpdate(
+      ctx.request.params.id,
+      { coSupervisor: ctx.request.body }
+    );
+    console.log(group);
+    ctx.status = 200;
+    ctx.body = group;
+  } catch (err) {
+    ctx.throw(500, err);
+    ctx.body = err;
+  }
+};
 
 const submitDocument = async (ctx) => {};
 
@@ -81,5 +121,6 @@ export {
     remove,
     requestSupervisor,
     requestCoSupervisor,
-    submitDocument
+    submitDocument,
+    getGroupByStudentId
 }
