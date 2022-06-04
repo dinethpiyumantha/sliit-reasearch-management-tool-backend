@@ -18,7 +18,7 @@ const TemplateSchema = new Schema({
         required: true,
         trim: true
     },
-    File: {
+    file: {
         type: Object,
         required: true,
         trim: true

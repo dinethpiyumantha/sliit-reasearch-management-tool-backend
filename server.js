@@ -5,6 +5,8 @@
 
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
+import koaStatic from 'koa-static';
+import path from 'path';
 import cors from '@koa/cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -14,6 +16,7 @@ import studentRouter from './routers/student.router.js';
 import groupRouter from './routers/group.router.js';
 import chatRouter from './routers/chat.router.js';
 import submissionRouter from './routers/submission.router.js';
+import templateRouter from './routers/template.router.js';
 
 dotenv.config();
 
@@ -22,12 +25,14 @@ const app = new Koa();
 
 app.use(cors());
 app.use(bodyParser());
+app.use(koaStatic('./public'));
 
 // Router middlewares
 app.use(studentRouter.routes()).use(studentRouter.allowedMethods());
 app.use(groupRouter.routes()).use(groupRouter.allowedMethods());
 app.use(chatRouter.routes()).use(chatRouter.allowedMethods());
 app.use(submissionRouter.routes()).use(submissionRouter.allowedMethods());
+app.use(templateRouter.routes()).use(templateRouter.allowedMethods());
 
 
 app.use(ctx => {
