@@ -1,0 +1,14 @@
+POST http://localhost:3000/api/panelmembers
+Content-Type: application/json
+
+{
+    "panelMemberId": "1",
+  "name": "Sandani Samarasekara",
+  "email": "dineth@email.com",
+  "phone": "1234",
+  "group": []
+}
+
+###
+
+GET http://localhost:3000/api/panelmembers

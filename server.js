@@ -19,6 +19,9 @@ import submissionTypeRouter from './routers/submissiontype.router.js';
 import chatRouter from './routers/chat.router.js';
 import submissionRouter from './routers/submission.router.js';
 import templateRouter from './routers/template.router.js';
+import panelmemberRouter from './routers/panelmember.router.js';
+import presentationtemplateRouter from './routers/presentationtemplates.router.js';
+import markingRouter from './routers/markingscheme.router.js';
 
 dotenv.config();
 
@@ -37,6 +40,9 @@ app.use(submissionTypeRouter.routes()).use(submissionTypeRouter.allowedMethods()
 app.use(chatRouter.routes()).use(chatRouter.allowedMethods());
 app.use(submissionRouter.routes()).use(submissionRouter.allowedMethods());
 app.use(templateRouter.routes()).use(templateRouter.allowedMethods());
+app.use(panelmemberRouter.routes()).use(panelmemberRouter.allowedMethods());
+app.use(presentationtemplateRouter.routes()).use(presentationtemplateRouter.allowedMethods());
+app.use(markingRouter.routes()).use(markingRouter.allowedMethods());
 
 
 app.use(ctx => {
