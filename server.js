@@ -16,7 +16,7 @@ import staffRouter from './routers/staff.router.js';
 import topicEvaluateRouter from './routers/topic.evaluate.router.js';
 import topicAcceptRouter from './routers/topicAccept.router.js';
 import evaluateDocRouter from './routers/evaluateDoc.router.js';
-
+import chatRouter from './routers/chat.router.js';
 dotenv.config();
 
 // Initialize the app
@@ -32,7 +32,7 @@ app.use(staffRouter.routes()).use(staffRouter.allowedMethods());
 app.use(topicEvaluateRouter.routes()).use(topicEvaluateRouter.allowedMethods());
 app.use(topicAcceptRouter.routes()).use(topicAcceptRouter.allowedMethods());
 app.use(evaluateDocRouter.routes()).use(evaluateDocRouter.allowedMethods());
-
+app.use(chatRouter.routes()).use(chatRouter.allowedMethods());
 app.use(ctx => {
   ctx.throw(404, 'API not found');
 });
